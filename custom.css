@@ -1,0 +1,357 @@
+/* Bullet */
+.bullet-container .bullet {
+  transform: scale(1.2);
+}
+
+.bullet-link-wrap {
+  clip-path: circle(50% at center);
+}
+
+.light-theme .bullet {
+  background-color: #000000 !important;
+  transform: none !important;
+}
+
+.light-theme .bullet-container:hover {
+  background-color: grey !important;
+}
+
+.light-theme .bullet-container.bullet-closed {
+  background-color: rgb(214, 216, 216) !important;
+}
+
+.light-theme .bullet-container.bullet-closed:hover {
+  background-color: grey !important;
+}
+
+.light-theme .bullet-container.bullet-closed:hover>.bullet {
+  background-color: #000000 !important;
+}
+
+.light-theme .bullet-container:not(.bullet-closed):hover>.bullet {
+  background-color: #000000 !important;
+}
+
+.dark-theme .bullet {
+  background-color: rgb(214, 216, 216) !important;
+  transform: none !important;
+}
+
+.dark-theme .bullet-container:hover {
+  background-color: grey !important;
+}
+
+.dark-theme .bullet-container.bullet-closed {
+  background-color: rgb(93, 96, 98) !important;
+}
+
+.dark-theme .bullet-container.bullet-closed:hover {
+  background-color: grey !important;
+}
+
+.dark-theme .bullet-container.bullet-closed:hover>.bullet {
+  background-color: rgb(214, 216, 216) !important;
+}
+
+.dark-theme .bullet-container:not(.bullet-closed):hover>.bullet {
+  background-color: rgb(214, 216, 216) !important;
+}
+
+/* Order list */
+.bullet-container.as-order-list .bullet {
+  background-color: transparent !important;
+}
+
+.bullet-container.as-order-list {
+  width: 16px;
+  height: 16px;
+}
+
+.bullet-container .bullet>* {
+  font-size: 16px;
+}
+
+.block-control-wrap.is-order-list {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.bullet-container.as-order-list:not(:focus-within):hover>.bullet {
+  background-color: transparent !important;
+}
+
+.dark-theme .ls-block:focus-within>div:first-child .as-order-list .bullet {
+  background-color: transparent !important;
+  color: white;
+}
+
+.light-theme .ls-block:focus-within>div:first-child .as-order-list .bullet {
+  background-color: transparent !important;
+  color: #000000;
+}
+
+.ls-block:focus-within>div:first-child .bullet-container.as-order-list {
+  background-color: transparent !important;
+}
+
+.ls-block:focus-within>div:first-child .as-order-list .bullet-contaniner {
+  background-color: transparent !important;
+}
+
+/* UI */
+.is-paragraph {
+font-size: 14px;
+color: grey;
+}
+.ls-block {
+border-bottom: none;
+}
+.external-link {
+text-decoration: underline;
+border-bottom: none;
+}
+textarea {
+    caret-color: #3F8FF3;
+}
+.block-ref {
+border-bottom: none;
+text-decoration: underline;
+text-decoration-color: #3F8FF3;
+}
+::selection {
+    background-color: rgb(63,143,243,0.2); /* 设置选中文本的背景颜色 */
+}
+.block-control {
+    margin-top: 2px;
+}
+.block-children-left-border {
+    pointer-events: none;
+}
+.inline mark {
+    background: yellow;
+    color: black;
+}
+
+/* Right Sidebar */
+.pt-4 {
+  padding-top: 0.25rem;
+}
+.my-2 {
+  margin: 0.25rem;
+}
+.light-theme .sidebar-item {
+  background-color: rgb(246, 245, 244);
+  box-shadow: none;
+}
+.light-theme .sidebar-item-list {
+  background-color: rgb(246, 245, 244);
+}
+.dark-theme .sidebar-item {
+  background-color: black !important;
+  box-shadow: none;
+}
+.dark-theme .sidebar-item-list {
+  background-color: black;
+}
+.sidebar-item-header {
+  display: none;
+}
+
+/* 反转 #app-container 的方向 */
+#app-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.cp__right-sidebar {
+  transition: width 0.3s ease; /* 添加过渡效果 */
+}
+
+/* 反转窗口分割线 */
+.cp__right-sidebar .resizer {
+  right: 0;
+  left: auto;
+}
+
+.cp__right-sidebar.open {
+  width: 220px !important;
+}
+
+/* Bar */
+#left-menu {
+  display: none;
+}
+#search-button {
+  display: none;
+}
+.light-theme .cp__right-sidebar-topbar {
+  background-color: rgb(246, 245, 244);
+}
+
+.dark-theme .cp__right-sidebar-topbar {
+  background-color:#000000;
+}
+.cp__right-sidebar-settings-btn {
+  display: none;
+}
+.cp__right-sidebar-topbar {
+  height: 2.6rem;
+}
+
+.sidebar-item-list {
+  margin-left: 0;
+  padding: 0;
+  height: 110vh;
+}
+
+/* TOC */
+.kef-tocgen-into {
+  font-size: 14px;
+}
+.kef-tocgen-arrow {
+  color: grey;
+}
+#dot-65ebf750-0951-4e3b-a50d-57f26d01eaf7 {
+  display: none;
+}
+#control-65ebf750-0951-4e3b-a50d-57f26d01eaf7 {
+  display: none;
+}
+
+/* Body */
+#main-content-container {
+  padding-top: 0;
+}
+
+/* Tags */
+a.tag {
+  font-size: 16px;
+}
+a.tag[data-ref="hide"] {
+  visibility: collapse;
+}
+.ls-block[data-refs-self*="hide"] > div > div > a > .bullet-container {
+  opacity: 0; /* 默认情况下不透明 */
+}
+
+/* HR */
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.block-main-container:has(hr) .bullet-container {display:none;}
+
+/* Breadcrumbs */
+.breadcrumb {
+  font-size: 17px;
+}
+
+/* H1 */
+.ls-block :is(h1) {
+  font-size: 16px; 
+  line-height: 1.5; /* 正文文本行高 */
+  border-bottom: 0px solid var(--ls-quaternary-background-color);
+  margin: 0;
+  padding-bottom: 0;
+}
+.items-baseline {
+  align-items: center;
+}
+.editor-inner .uniline-block:is(.h1) {
+  font-size: 16px;
+  line-height: 1.5; /* 正文文本行高 */
+  border-bottom: 0px solid var(--ls-quaternary-background-color);
+  margin: 0;
+  padding-bottom: 0;
+}
+
+/* Tasks */
+.block-marker {
+  display: none;
+}
+
+.form-checkbox {
+  border-radius: 30%;
+  margin-top: -3px;
+}
+
+/* Smartsearch */
+.kef-ss-inputhint {
+  display: none;
+}
+.kef-ss-container {
+  max-width: calc(var(--ls-main-content-max-width) * 0.8);
+}
+.kef-ss-input::placeholder {
+  opacity: 0;
+}
+
+/* Markmind */
+.ui-items-container[data-type=pagebar] a.button {
+    display: none;
+}
+
+/* Hide unlinked references */
+.mt-6 {
+  display: none;
+}
+
+/* Hide help */
+.cp__sidebar-help-btn {
+  display: none;
+}
+
+/*首行放大*/
+.cp__sidebar-main-content div:not(.custom-query)>div>div>
+div:not(.custom-query-results)>.content>.blocks-container>div>div>
+.ls-block:not(.pre-block):not([level])>div.flex-row {align-items:baseline;}
+
+.cp__sidebar-main-content .content>.blocks-container>div>div>
+.ls-block:not(.pre-block):not([level])>div:first-child>
+.block-content-wrapper>.flex .block-content-inner>div.flex-1,
+
+.cp__sidebar-main-content .content>.blocks-container>div>div>
+.ls-block:not(.pre-block):not([level])>div:first-child>
+.editor-wrapper .editor-inner textarea {min-height:1.5em;font-size:2rem;
+  font-weight:600;margin:0;line-height:1.5;}
+
+.cp__sidebar-main-content .content>.blocks-container>div>div>
+.ls-block:not(.pre-block):not([level])>div:first-child>
+.block-content-wrapper>.flex .block-content-inner>div.flex-1
+.block-ref>div>div.block-content-inner::before {font-size:.875em;}
+
+/*修复*/
+.cp__sidebar-main-content :is(.embed-block,.custom-query .blocks-container) 
+:is(.block-content-inner>div.flex-1,.editor-wrapper>.editor-inner>textarea),
+.cards-review, .asset-action-bar button,.custom-query {
+  font-weight:initial !important;margin-top:0 !important;font-size:1rem !important;
+  min-height:initial !important;}
+
+.cp__sidebar-main-content div:not(.custom-query-results).content>
+.blocks-container>div>div>.ls-block:not(.pre-block):not([level])>div:first-child>
+.editor-inner .uniline-block:is(.h1, .h2, .h3, .h4, .h5, .h6),
+.cp__sidebar-main-content div:not(.custom-query-results)>.content>
+.blocks-container>div>div>.ls-block:not(.pre-block):not([level])>div:first-child>
+.block-content-wrapper>.flex .block-content-inner>div.flex-1
+:is(h1, h2, h3, h4, h5, h6) {font-size:2rem;font-weight:600;}
+
+.cp__sidebar-main-content div:not(.custom-query-results)>.content>
+.blocks-container>div>div>.ls-block:not(.pre-block):not([level])>div:first-child>
+.block-content-wrapper>.flex .block-content-inner>
+div.flex-1 :is(b,b .page-ref,a.tag) {font-weight:600;}
+
+.cp__sidebar-main-content div:not(.custom-query-results).content>
+.blocks-container>div>div>.ls-block:not(.pre-block):not([level])>div:first-child 
+.block-content-inner>div.flex-1 :is(h1, h2, h3, h4, h5, h6) {margin:0;}
+
+.cp__sidebar-main-content .page-property-value .block-content-inner>div.flex-1 {
+  font-size:1rem !important;font-weight:initial !important;}
+
+.cp__sidebar-main-content .content>.blocks-container>div>div>
+.ls-block:not(.pre-block):not([level])>div:first-child 
+.block-content-inner>div.flex-1 .embed-block {font-size:1rem !important;}
+
+.cp__sidebar-main-content :is(.references-blocks,.custom-query) 
+.breadcrumb .block-content-inner>div.flex-1 {font-size:inherit !important;
+  font-weight:inherit !important;}
+
+.custom-query .breadcrumb i {font-size:inherit;opacity:inherit;}
