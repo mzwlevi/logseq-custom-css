@@ -1,0 +1,178 @@
+/* Bullet path */
+:root {
+  --ls-block-bullet-active-color: #3F8FF3;
+  --ls-block-bullet-threading-width: var(
+    --ls-block-bullet-threading-width-overwrite,
+    2px
+  );
+}
+.block-children {
+  border-left-color: var(--ls-guideline-color);
+  border-left-width: var(--ls-block-bullet-threading-width) !important;
+}
+.block-children-left-border:hover {
+  background-color: var(--ls-block-bullet-active-color);
+}
+.block-content-wrapper {
+  position: relative;
+  overflow-x: visible !important;
+  overflow: auto;
+  /* Fixme: overflow? */
+}
+.ls-block div.block-control-wrap {
+  position: relative;
+  height: 24px !important;
+}
+.ls-block .ls-block > div > div.items-center::before {
+  pointer-events: none;
+  content: "";
+  left: calc(var(--ls-block-bullet-threading-width) * -1);
+  right: 16px;
+  top: calc(-55% + var(--ls-block-bullet-threading-width) * 0.5 - 1px);
+  bottom: 46%;
+  /* shift left 1px for border */
+  position: absolute;
+  border-left: var(--ls-block-bullet-threading-width) solid transparent;
+  border-bottom: var(--ls-block-bullet-threading-width) solid transparent;
+  /* border-bottom-left-radius: 5px; */
+  z-index: 9999;
+}
+
+.ls-block .ls-block:focus-within > div > div.items-center::before {
+  border-color: var(--ls-block-bullet-active-color);
+}
+.ls-block .block-children > .ls-block::before {
+  pointer-events: none;
+  content: "";
+  top: -1rem;
+  bottom: 0;
+  border-left: var(--ls-block-bullet-threading-width) solid transparent;
+  left: calc(var(--ls-block-bullet-threading-width) * -1);
+  position: absolute;
+}
+.ls-block .block-children:focus-within > .ls-block:not(:focus-within)::before {
+  border-color: var(--ls-block-bullet-active-color);
+}
+.ls-block .block-children:focus-within > .ls-block:focus-within ~ .ls-block::before {
+  border-color: transparent;
+}
+.ls-block[haschild] > div > .block-content-wrapper::before {
+  pointer-events: none;
+  content: "";
+  top: 12px;
+  bottom: 0;
+  left: -15px;
+  position: absolute;
+  border-left: var(--ls-block-bullet-threading-width) solid transparent;
+}
+.ls-block[haschild]:focus-within > div > .block-content-wrapper::before {
+  border-color: var(--ls-block-bullet-active-color);
+}
+
+:is(.embed-block > div, .embed-page) > div > div > div > div.ls-block > div > div.items-center::before {
+  border-color: transparent !important;
+}
+
+@media (max-width: 640px) {
+  .ls-block[haschild] > div > .block-content-wrapper::before {
+    left: -11px;
+  }
+}
+/* Disable for doc mode */
+.doc-mode div.items-center::before,
+.doc-mode div.items-center::after,
+.doc-mode .ls-block::before,
+.doc-mode .ls-block::after {
+  display: none;
+}
+
+.doc-mode .block-children {
+  border-left-width: 0px !important;
+}
+
+/* Bullet */
+.bullet-link-wrap {
+  clip-path: circle(50% at center);
+}
+.light-theme .bullet {
+  background-color: #000000 !important;
+  transform: none !important;
+}
+.light-theme .bullet-container:hover {
+  background-color: grey !important;
+}
+.light-theme .bullet-container.bullet-closed {
+  background-color: rgb(214, 216, 216) !important;
+}
+.light-theme .bullet-container.bullet-closed:hover {
+  background-color: grey !important;
+}
+.light-theme .bullet-container.bullet-closed:hover > .bullet {
+  background-color: #000000 !important;
+}
+.light-theme .bullet-container:not(.bullet-closed):hover > .bullet {
+  background-color: #000000 !important;
+}
+
+.dark-theme .bullet {
+  background-color: rgb(214, 216, 216) !important;
+  transform: none !important;
+}
+.dark-theme .bullet-container:hover {
+  background-color: grey !important;
+}
+.dark-theme .bullet-container.bullet-closed {
+  background-color: rgb(93, 96, 98) !important;
+}
+.dark-theme .bullet-container.bullet-closed:hover {
+  background-color: grey !important;
+}
+.dark-theme .bullet-container.bullet-closed:hover > .bullet {
+  background-color: rgb(214, 216, 216) !important;
+}
+.dark-theme .bullet-container:not(.bullet-closed):hover > .bullet {
+  background-color: rgb(214, 216, 216) !important;
+}
+.ls-block:focus-within > div:first-child .bullet {
+  background-color: #3F8FF3 !important;
+}
+.ls-block:focus-within > div:first-child .bullet:not(.as-order-list) {
+  background-color: #3F8FF3 !important;
+  /* transform: scale(.4); */
+}
+.ls-block:focus-within > div:first-child .bullet-container:not(.as-order-list) > .bullet {
+  background-color: #3F8FF3 !important;
+}
+  
+/* Order list */
+.bullet-container.as-order-list .bullet {
+  background-color: transparent !important;
+}
+.bullet-container.as-order-list {
+  width: 16px;
+  height: 16px;
+}
+.bullet-container .bullet>* {
+  font-size: 16px;
+}
+.block-control-wrap.is-order-list {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.bullet-container.as-order-list:not(:focus-within):hover > .bullet {
+  background-color: transparent !important;
+}
+.dark-theme .ls-block:focus-within > div:first-child .as-order-list .bullet {
+  background-color: transparent !important;
+  color: white;
+}
+.light-theme .ls-block:focus-within > div:first-child .as-order-list .bullet {
+  background-color: transparent !important;
+  color: #000000;
+}
+.ls-block:focus-within > div:first-child .bullet-container.as-order-list {
+  background-color: #3F8FF3 !important;
+}
+.ls-block:focus-within > div:first-child .as-order-list .bullet-contaniner {
+  background-color: #3F8FF3 !important;
+}
